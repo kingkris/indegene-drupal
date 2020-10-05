@@ -1,0 +1,263 @@
+/* ==========================================================================
+    Few points to remeber for every CSS property
+    +++++++++++++++++++++++++++++++++++++++++++++++
+    • Default values for different elements
+    • Overriding & different values that can be given
+    • Inheritence
+    • Can they be applied to all elements
+    • Can they be animated
+   ========================================================================== */
+/*
+
+Background related style properties
++++++++++++++++++++++++++++++++++++++++++++
+
+~  background-color -
+    ^ default value transparent
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can animate
+~  background-image - url()
+    ^ default value none
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can animate
+
+~  background-repeat: repeat | no-repeat | repeat-x | repeat-y
+    ^ default value is repeat
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can't animate
+
+~  background-attachment- scroll | fixed
+    ^ default value is scroll
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can't animate
+
+~  background-position
+    values are specified in key words as x & y codordinates
+      for x - left center right
+      for y - top center bottom
+      you can also specify as length
+
+    ^ default value is left top - 0 0
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can't animate
+
+background [color image repeat attachment position]
+
+~  background-size – auto | contain | cover | -length-
+    ^ default value is auto
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can't animate
+
+
+
+
+Sprites - 
+background-origin – border-box, padding-box, content-box
+background-clip – 
+multiple backgrounds – CSS3
+Gradient Backgrounds – CSS3
+
+
+
+auto;
+inherit;
+
+Background related important links
++++++++++++++++++++++++++++++++++++++++++++
+
+https://developer.mozilla.org/en/docs/Web/CSS/background-color
+*/
+
+/* ==========================================================================
+   Demo of Background related properties
+   ========================================================================== */
+
+   .box{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: lightgreen;
+    border-radius: 10px;
+  }
+  
+  .box-bg{ background-color: lightblue;transition: all 750ms ease;}
+  .box-bg:hover{ background-color: red;}
+
+  .bg-img-demo{
+      min-height: 600px;
+      background-image: url('../img/square-tile.png');
+  }
+  .h-stripes{
+    min-height: 600px;
+    background-color: limegreen;
+    background-image: url('../img/h-stripes.png');
+    background-attachment: fixed;
+}
+.bg-repeat-demo{
+    min-height: 600px;
+    background-image: url('../img/floral-tile-small.png');
+    background-repeat: repeat-y;
+}
+.bg-position-demo{
+    min-height: 200px;
+    background-image: url('../img/floral-tile-small.png');
+    background-position: -10px 100px;
+    background-repeat: no-repeat;
+}
+
+.bg-size-demo{
+    min-height: 200px;
+    background-image: url('../img/floral-tile-small.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.bg-size-demo-1{
+    min-height: 300px;
+    width: 500px;
+    background-image: url('../img/sea-shore.jpg');
+    background-position: 300px 300px;
+}
+
+.bg-sprite-demo{}
+.bg-sprite-demo ul{
+    list-style: none;
+    padding-left: 0;
+}
+.bg-sprite-demo ul li{
+    border: 1px dotted #000;
+    margin-bottom: 20px;
+    font-size: 22px;
+    position: relative;
+    padding-left: 50px;
+}
+.bg-sprite-demo ul li:before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    background-image: url('../img/sprite-demo.png');
+    background-repeat: no-repeat;
+    background-position: 2px 7px;
+}
+.bg-sprite-demo ul li.icn-cycle:before{ background-position: 2px 7px; }
+.bg-sprite-demo ul li.icn-bus:before{ background-position: -52px 7px; }
+.bg-sprite-demo ul li.icn-meeting:before{ background-position: -102px 7px; }
+.bg-sprite-demo ul li.icn-settings:before{ background-position: -152px 7px; }
+
+.bg-sprite-demo ul li:hover.icn-cycle:before{ background-position: 2px -43px; }
+.bg-sprite-demo ul li:hover.icn-bus:before{ background-position: -52px -43px; }
+.bg-sprite-demo ul li:hover.icn-meeting:before{ background-position: -102px -43px; }
+.bg-sprite-demo ul li.icn-settings:hover:before{ background-position: -152px -43px; }
+
+.bg-origin-clip-demo{
+    border: solid 50px rgba(0,0,0,.6);
+    background-image: url('../img/sea-shore.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px;
+    background-color: blue;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+.bg-multiple-demo{
+    min-height: 600px;
+    background-image: url('../img/h-stripes.png'), url('../img/gradient-bg.png') ,url('../img/sea-shore.jpg');
+    background-attachment: scroll, fixed, fixed;
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover;
+}
+
+.bg-gradient-demo{
+    min-height: 300px;
+    background: #fcecfc;
+    background: -webkit-linear-gradient(top,  #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%);
+    background: linear-gradient(to bottom,  #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%);
+
+}
+.sidebar h4{
+    margin: 0 0 10px;
+}
+
+.sidebar{
+    width: 220px;
+    float: left;
+    background-color: rgba(0,0,0,.2);
+    padding: 10px;
+}
+.sidebar ul{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.sidebar li{
+    padding-bottom: 10px;
+}
+.sidebar li a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: seashell;
+    font-size: 14px;
+    position: relative;
+    padding: 4px 0 0 28px;
+}
+.sidebar li a:hover{
+    
+    color: darkgreen;
+    
+}
+.sidebar li a:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    background-image: url('../img/sprite-demo.png');
+    background-repeat: no-repeat;
+    background-size: 220px;
+}
+.sidebar li.cat1 a:before{ background-position: 0 3px;}
+.sidebar li.cat2 a:before{ background-position: -26px 2px;}
+.sidebar li.cat3 a:before{ background-position: -54px 3px;}
+.sidebar li.cat4 a:before{ background-position: -81px 3px;}
+.sidebar li.cat5 a:before{ background-position: -108px 1px;}
+.sidebar li.cat6 a:before{ background-position: 0 3px;}
+.content-area{
+    border: solid 1px rgba(0,0,0,.2);
+    margin-left: 240px;
+    padding: 10px;
+    background-image: url('../img/sea-shore.jpg');
+    background-repeat: no-repeat;
+    background-size: 720px;
+    position: relative;
+
+}
+.gradient-overlay{
+    background-color: rgba(0, 193, 39, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.content{
+    position: relative;
+    z-index: 1;
+    color: #FFF;
+}
+
+
+
+
+

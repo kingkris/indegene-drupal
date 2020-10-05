@@ -1,0 +1,226 @@
+/* ==========================================================================
+    Few points to remeber for every CSS property
+    +++++++++++++++++++++++++++++++++++++++++++++++
+    • Default values for different elements
+    • Different values that can be given
+    • Inheritence
+    • Can they be applied to all elements
+    • Can they be animated
+   ========================================================================== */
+/*
+
+block related style properties
++++++++++++++++++++++++++++++++++++++++++++
+
+~  word-spacing: normal | <length>
+~  letter-spacing : normal | <length>
+    ^ default value is auto
+    ^ This property gets inherited
+    ^ This property can be applied to all the elements
+    ^ Can animate
+
+~  vertical-align : baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length>
+    ^ default value is baseline
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to very few elements, like img, input, td, tr, table
+    ^ you can animate
+https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+
+
+~  text-align : left | right | center | justify
+    ^ default value is left - depends on page direction
+    ^ This property gets inherited
+    ^ This property can be applied to all the elements
+    ^ Can't animate
+
+~  text-indent
+    ^ default value is auto
+    ^ This property gets inherited
+    ^ This property can be applied to block level elements
+    ^ Can't animate
+
+~  white-space: normal | pre | nowrap | pre-wrap | pre-line
+    ^ default value is auto
+    ^ This property gets inherited
+    ^ This property can be applied to block level elements
+    ^ Can't animate
+    https://developer.mozilla.org/en/docs/Web/CSS/white-space
+
+
+~  display: block | inline | inline-block | 
+            table | table-row | table-cell | 
+            list-item | none
+    ^ default value is auto
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements
+    ^ You can animate
+ 
+~  content – 
+~  text-overflow - clip | ellipsis 
+
+
+
+auto;
+inherit;
+
+*/
+
+
+
+
+/* ==========================================================================
+   Demo of Block related properties
+   ========================================================================== */
+
+   .box{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: lightgreen;
+    border-radius: 10px;
+  }
+  
+
+
+
+.word-space-demo{
+    word-spacing: 30px;
+}
+.letter-space-demo{
+    letter-spacing: 30px;
+}
+.vertical-align-demo img{
+    vertical-align: top;
+}
+.text-align-demo *{
+    border: solid 2px red;
+}
+
+.text-align-demo{
+    text-align: center;
+}
+.text-indent-demo{
+    text-indent: -50px;
+}
+
+.white-space-demo div{
+    white-space: pre-wrap;
+
+}
+
+
+
+.dabba{
+    border: solid 1px black;
+    background-color: lime;
+}
+.display-block-demo .dabba{
+    display: block;
+    width: 25%;
+}
+.display-inline-demo .dabba{
+    display: inline;
+    width: 25%;
+}
+.display-inline-block-demo .dabba{
+    display: inline-block;
+    width: 25%;
+}
+
+
+.tabz{
+    background-color: lightgreen;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    min-height: 400px;
+}
+.tabz li{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+}
+.tabz li a{
+    display: block;
+    border-bottom: 4px solid #000;
+    text-decoration: none;
+    color: #444;
+}
+.tabz li .content{
+    display: none;
+    border: 1px solid #3c790a;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26px;
+}
+.tabz li:hover .content{
+    display: block;
+}
+
+.content-demo h2{
+    text-align: center;
+    border: dotted 2px red;
+}
+.content-demo h2 span{
+    display: none;
+}
+.content-demo h2:before{
+    text-align: center;
+    content: "\20B9";
+    color: lightsalmon;
+    font-weight: normal;
+    font-size: 20px;
+    background-color: #fff;
+    border: solid 1px red;
+}
+.content-demo h2:after{
+    text-align: center;
+    content: "here it goes";
+    color: lightsalmon;
+    font-weight: normal;
+    font-size: 20px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+.text-overflow-demo h2{
+    border: solid 2px red;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+
+.text-indent-demo1{
+    text-indent: 30px;
+}
+.ws-demo1{
+    white-space: pre-wrap;
+}
+
+.display-demo{
+    background-color: #fff;
+    padding: 10px 10px 10px 30px ;
+    transition: all 250ms ease;
+    position: relative;
+}
+.display-demo:before{
+    content: "Demo 01: ";
+}
+
+.display-demo span{
+    display: none;
+    background-color: lightblue;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px;
+    transition: all 250ms ease;
+    position: relative;
+    top: -30px;
+}
+.display-demo:hover span{
+    display: block;
+    top: 0;
+
+}

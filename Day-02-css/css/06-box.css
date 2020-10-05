@@ -1,0 +1,524 @@
+/* ==========================================================================
+    Few points to remeber for every CSS property
+    +++++++++++++++++++++++++++++++++++++++++++++++
+    • Default values for different elements
+    • Overriding & different values that can be given
+    • Inheritence
+    • Can they be applied to all elements
+    • Can they be animated
+   ========================================================================== */
+
+
+/*
+
+Box related style properties
++++++++++++++++++++++++++++++++++++++++++++
+
+~  width: <length>
+    ^ default value auto - for block level it is 100%, for inline it is content width
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  min-width: <length>
+    ^ default value auto - for block level it is 100%, for inline it is content width
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  max-width: <length>
+    ^ default value auto - for block level it is 100%, for inline it is content width
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  height: <length>
+    ^ default value auto
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  min-height: <length>
+    ^ default value auto
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  max-height: <length>
+    ^ default value auto
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to 
+                all block level elements
+                all floated elements
+                all positioned elements
+    ^ You can animate
+
+~  overflow: visible | hidden | scroll | auto
+    ^ default value visible
+    ^ This property doesn't gets inherited
+    ^ This property can be to all elements
+    ^ You can animate
+
+~  overflow-x: visible | hidden | scroll | auto
+~  overflow-y: visible | hidden | scroll | auto
+
+~  padding-top: 
+~  padding-right: 
+~  padding-bottom: 
+~  padding-left: 
+
+~  padding: 
+    ^ default value is
+            for ol and ul padding-left 40px
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements, except
+            padding-top and padding-bottom, they won't
+            work on inline elements
+    ^ You can animate
+
+
+
+~  margin-top: 
+~  margin-right: 
+~  margin-bottom: 
+~  margin-left: 
+
+~  margin: 
+    ^ default value 
+    ^ This property doesn't gets inherited
+    ^ This property can be applied to all elements, except
+            margin-top and margin-bottom, they won't
+            work on inline elements
+    ^ You can animate
+
+~  box-sizing: content-box | padding-box | border-box
+    ^ default value content-box
+    ^ This property doesn't gets inherited
+    ^ This property can be to all elements
+    ^ You can't animate
+
+
+~  float : none | left | right
+    ^ default value none
+    ^ This property doesn't gets inherited
+    ^ This property can be to all elements
+    ^ You can animate
+
+
+~  clear: none | left | right | both
+    ^ default value none
+    ^ This property doesn't gets inherited
+    ^ This property can be to all elements
+    ^ You can't animate
+
+
+
+
+
+
+
+
+
+cursor:
+https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+
+
+
+opacity 
+resize - none | both | horizontal | vertical | block | inline
+Flexbox
+column-count
+column-gap
+column-fill – auto | balance
+column-rule - <'column-rule-width'> || <'column-rule-style'> || <'column-rule-color'>
+
+grids
+
+
+auto;
+inherit;
+
+Box related important links
++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+*/
+
+
+/* ==========================================================================
+   Demo of Box related properties
+   ========================================================================== */
+
+.container {
+    background-color: lightgray;
+    padding: 40px;
+}
+
+.circle {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border: solid 5px red;
+    padding: 20px;
+}
+
+.diamond {
+    background-color: lightpink;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content-demo {
+    text-align: center;
+}
+
+.content-demo::before,
+.content-demo::after {
+    font-size: 16px;
+    background-color: lime;
+    font-weight: normal;
+}
+
+.content-demo:before {
+    content: "-- > ";
+    padding: 5px 10px 5px 0;
+    margin-right: 10px;
+    border-radius: 0 25px 25px 0;
+}
+
+.content-demo:after {
+    content: "< -- ";
+    padding: 5px 0 5px 10px;
+    margin-left: 10px;
+    border-radius: 25px 0 0 25px;
+}
+
+.dabba {
+    background-color: lightblue;
+    border: solid 20px red;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.dabba-border {
+    box-sizing: border-box;
+}
+
+.dabba-content {
+    box-sizing: content-box;
+}
+
+.dabba-padding {
+    box-sizing: padding-box;
+}
+
+.-overflow-demo {
+    border-width: 5px;
+    width: 400px;
+    min-height: 50px;
+    max-height: 100px;
+    overflow: hidden scroll;
+}
+
+.full-width-box {
+    width: 100vw;
+    height: 100vh;
+    border: solid 5px red;
+    background-color: lime;
+    margin-bottom: 20px;
+}
+
+.padding-demo {
+    margin: 40px auto;
+    border: solid 5px black;
+    background-color: wheat;
+    padding: 20px;
+    width: 70%;
+}
+
+.padding-demo>div,
+.padding-demo>span {
+    border: solid 1px red;
+    background-color: #fff;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.margin-demo {
+    margin: 40px auto;
+    border: solid 5px black;
+    background-color: wheat;
+    padding: 20px;
+    width: 70%;
+}
+
+.margin-demo>div,
+.margin-demo>span {
+    border: solid 1px red;
+    background-color: #fff;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.box {
+    border: dotted 1px red;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.box h3 {
+    background-color: turquoise;
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.wd-demo {
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.min-wd-demo {
+    min-width: 300px;
+    border: 1px solid #000;
+    /* display: inline-block; */
+    /* float: left; */
+}
+
+.max-wd-demo {
+    border: 1px solid #000;
+    max-width: 500px;
+    width: 600px;
+}
+
+.height-demo {
+    border: 1px solid #000;
+    height: 50px;
+    width: 400px;
+}
+
+.min-height-demo {
+    border: 1px solid #000;
+    min-height: 50px;
+    width: 400px;
+}
+
+.max-height-demo {
+    border: 1px solid #000;
+    min-height: 50px;
+    max-height: 70px;
+    width: 400px;
+}
+
+.overflow-demo {
+    border: 1px solid #000;
+    width: 400px;
+    height: 200px;
+    overflow: auto;
+}
+
+.box-sizing-demo {
+    width: 300px;
+    height: 100px;
+    padding: 25px;
+    border: solid 10px #000;
+}
+
+.box-sizing-demo1 {
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+    padding: 25px;
+    border: solid 10px #000;
+}
+
+.float-demo {
+    background-color: green;
+}
+
+.float-left {
+    border: 1px solid #000;
+    float: left;
+    min-width: 180px;
+    height: 100px;
+}
+
+.clear-left {
+    clear: both;
+}
+
+.cleared-text {
+    border: solid 2px red;
+    clear: both;
+}
+
+.fl-container {
+    border: solid 4px red;
+    margin: 10px;
+    background-color: goldenrod;
+}
+
+.fl-container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cf:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.fl-container div {
+    border: solid 2px green;
+}
+
+.left-floated {
+    float: left;
+}
+
+.right-floated {
+    float: right;
+}
+
+
+/* Cards layout */
+
+.cards {
+    background-color: indigo;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cards * {
+    box-sizing: border-box;
+}
+
+.gallery:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pic {
+    width: 20%;
+    border: solid 5px #FFF;
+    float: left;
+}
+
+.pic img {
+    width: 100%;
+    display: block;
+}
+
+.parent-dabba {
+    /* border-width: 10px;
+    border-style: solid;
+    border-color: red blue green black; */
+    border: 10px solid red;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+._child {
+    border: 5px solid blue;
+}
+
+._sibling {
+    border: 5px solid green;
+}
+
+._fl {
+    float: left;
+    min-height: 50px;
+}
+
+._fr {
+    float: right;
+    min-height: 50px;
+}
+
+._clear-both {
+    clear: both;
+}
+
+._clear-fix::after {
+    content: "";
+    display: block;
+    clear: both;
+    border: 1px solid #000;
+}
+
+
+/* ===================================
+        CSS reated FLoat Demo
+        *********************
+=====================================*/
+
+.kg-wrapper {
+    background-color: lightblue;
+    padding: 0 10px 10px;
+    margin-bottom: 20px;
+}
+
+.kg-wrapper h2 {
+    background-color: deepskyblue;
+    text-align: center;
+    line-height: 46px;
+    margin: 0 -10px 20px;
+}
+
+._box1 {
+    border: dashed 1px red;
+    width: 20%;
+    min-height: 50px;
+    margin: 0;
+}
+
+._inline-demo {}
+
+._inline-demo ._box1 {
+    display: inline-block;
+}
+
+._inline-demo ._box1:nth-child(5) {
+    height: 80px;
+}
+
+._float-demo ._box1 {
+    float: right;
+    box-sizing: border-box;
+}
+
+._float-demo div:nth-of-type(6) {
+    height: 90px;
+}
+
+.kg-wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+}
