@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  margin: 0;
+  font-family: 'Poppins',  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.container{
+  padding: 15px 15px 0;
+  border: 1px solid #000;
+}
+.container:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.col{
+  border: 1px solid #000;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
+}
+.bg-red{background-color: lightpink;}
+.bg-blue{background-color: lightsteelblue;}
+.bg-green{background-color: lightseagreen;}
+
+@media (min-width:768px) {
+  .bg-red{
+    width: calc(50% - 7.5px);
+    float: left;
+  }
+  .bg-blue{
+    width: calc(50% - 7.5px);
+    float: right;
+  }
+  .bg-green{
+    clear: both;
+  }
+}
+@media (min-width:1200px) {
+  .bg-red,
+  .bg-blue{
+    width: calc(30% - 15px);
+  }
+  .bg-green{
+    clear: none;
+    margin: 0 30%;
+  }
+}
+.row{
+  background-color: lightgreen;
+  margin: 30px 0;
+  padding: 7.5px;
+}
+.row:after{
+  clear: both;
+  display: block;
+  content: "";
+}
+.widget{
+  padding: 7.5px;
+}
+@media (min-width:768px){
+  .widget{
+    width: 50%;
+    float: left;
+  }
+}
+@media (min-width:1200px){
+  .widget{
+    width: 33.3333%;
+  }
+}
+.widget-body{
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.circle-wrap{
+  background-color: lightpink;
+  height: 600px;
+  width: 600px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid #0004;
+}
+.circle{
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  border: solid 10px #FFFF;
+}
+.circle-wrap .circle:nth-child(1){left: 0;right: 0; top: 50px;}
+.circle-wrap .circle:nth-child(2){top:0; bottom:0; left: 50px;}
+.circle-wrap .circle:nth-child(3){left: 0;right: 0; bottom: 50px;}
+.circle-wrap .circle:nth-child(4){top:0; bottom:0; right: 50px;}
