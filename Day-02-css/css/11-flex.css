@@ -97,12 +97,9 @@ https://flexbox.webflow.com/#collectiongrid
 
 
 .display-flex-cards{
-
-
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-
 }
 .display-flex-cards .card{
    flex-grow: 1;

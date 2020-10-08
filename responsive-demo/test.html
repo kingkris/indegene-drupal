@@ -1,1 +1,126 @@
-  tab
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@300;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+
+<style>
+  *{box-sizing: border-box;}
+  body{
+    font-family: 'Piazzolla', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #444;
+    background-color: lightskyblue;
+  }
+  h1{font-weight: 900;}
+
+  .dabba{
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    min-height: calc(100vh - 40px);
+  }
+  @media (min-width: 1024px) {
+    .dabba{
+      margin: 20px auto;
+      width: 980px;
+    }
+  }
+
+
+  .row{
+    border: 1px solid #000;
+  }
+  .card{
+    border: 1px solid #F00;
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 20px;
+  }
+  .card:before{
+    content: "\00b1";
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 58px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  @media (min-width: 768px) {
+    .row{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .card{
+      padding-left: 0;
+      padding-top: 100px;
+      width: 48%;
+      text-align: center;
+    }
+    .card:before{
+      width: 90px;
+      height: 90px;
+      line-height: 88px;
+      left: 0;right: 0;
+      top: 10px;
+      bottom: initial;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    .card{
+      width: 32.333%;
+    }
+  }
+  [class="card"]{
+    
+  }
+  @media print {
+    *{
+      border: none !important ;
+      color: #F00 !important;
+      text-decoration: none;
+    }
+    img{
+      display: none;
+    }
+  }
+
+</style>
+
+</head>
+<body>
+  <div class="dabba">
+    <h1>Welcome to the BOX</h1>
+
+    <div class="row">
+      <div class="card">
+        <h2>Coding</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet qui laborum rem neque fugit dignissimos doloribus, animi enim odit eaque maxime ipsum accusantium sint eos officia quod, rerum velit tempora.</p>
+      </div>
+      <div class="card">
+        <h2>Running</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet qui laborum rem neque fugit dignissimos doloribus, animi enim odit eaque maxime ipsum accusantium sint eos officia quod, rerum velit tempora.</p>
+      </div>
+      <div class="card">
+        <h2>Cooking</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet qui laborum rem neque fugit dignissimos doloribus, animi enim odit eaque maxime ipsum accusantium sint eos officia quod, rerum velit tempora.</p>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

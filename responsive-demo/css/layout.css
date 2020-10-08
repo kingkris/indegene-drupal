@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  margin: 0;
+  font-family: 'Poppins',  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+.col{
+  border: 1px solid #000;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
+}
+.one{background-color: lightpink;}
+.two{background-color: lightsteelblue;}
+.three{background-color: lightseagreen;}
+
+
+.container{padding: 15px;}
+@media (min-width:768px){
+  .container{
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width:1024px){
+  .container{
+    width: 980px;
+  }
+}
+
+/* ============================================
+
+                  %% FLoat Demo %%
+                *******************
+============================================ */
+
+
+@media (min-width:768px){
+  .float-demo:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .float-demo .one{
+    float: left;
+    width: calc(50% - 15px);
+  }
+  .float-demo .two{
+    float: right;
+    width: calc(50% - 15px);
+  }
+  .float-demo .three{
+    clear: both;
+  }
+}
+@media (min-width:1024px){
+  .float-demo .one{ width: calc(30% - 15px);}
+  .float-demo .two{ width: calc(30% - 15px);}
+  .float-demo .three{
+    clear: none;
+    margin: 0 30%;
+  }
+}
+
+/* ============================================
+
+                  %% Flex Demo %%
+                *******************
+============================================ */
+
+@media (min-width:768px){
+  .flex-demo{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .flex-demo .col{
+    flex: 1 1 33.33%;
+    margin: 10px;
+  }
+}
+@media (min-width:1024px){
+  .flex-demo .col{
+    flex: 1 1 auto;
+    margin: 10px;
+  }
+  .flex-demo .col:nth-child(2){
+    order: 2;
+  }
+  .flex-demo .col:nth-child(3){
+    flex-basis: 24%;
+  }
+}
+
+
+
+.resizer{
+  background-color: yellowgreen;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.resizer a{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+.resizer a:hover,
+  .resizer a.active{
+  color: chocolate;
+  text-decoration: underline;
+}
+
+.new-class{
+  background-color: limegreen;
+  color: whitesmoke;
+}
+
+.website-frame{
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 5px gray;
+  transition: all 250ms ease-in-out ;
+}
+.website-frame iframe{
+  width: 100%;
+  height: 500px;
+  transition: all 250ms ease-in-out ;
+}
+
+.mobile{ width: 360px;}
+.tab{ width: 768px;}
+.laptop{ width: 980px;}
+.desktop{ width: 1400px;}
+

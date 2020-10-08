@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Demo</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  
+
+
+</head>
+<body>
+<div class="container">
+  
+  <div class="float-demo">
+    <div class="col one">Column 01</div>
+    <div class="col two">Column 02</div>
+    <div class="col three">Column 03</div>
+  </div>
+
+
+  <div class="flex-demo">
+    <div class="col one">Flex demo - Column 01</div>
+    <div class="col two">Column 02</div>
+    <div class="col three">Column 03</div>
+  </div>
+  
+</div>
+
+<nav class="resizer">
+  <a href="#" class="active" data-view="mobile">Mobile View</a>
+  <a href="#" data-view="tab">Tab View</a>
+  <a href="#" data-view="laptop">Laptop View</a>
+  <a href="#" data-view="desktop">Desktop View</a>
+</nav>
+
+<div class="website-frame mobile">
+  <iframe src="https://htmlden.com/" frameborder="0" ></iframe>
+</div>
+  
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" ></script>
+<script>
+  $(document).ready(function () {
+    x = $('.flex-demo .one').text();
+    console.log(x)
+    // $('.flex-demo .one').text("This is from jQuery");
+    // $('.flex-demo .one').addClass('new-class');
+    // $('.flex-demo .one').css('color', 'green');
+    
+    elem = $('.flex-demo .one');
+    console.log($(elem).text());
+    $(elem).text("This is the new Text").addClass('new-class');
+
+
+    startingSize = 'mobile';
+    $('.resizer a').click(function (e) { 
+      console.log(startingSize);
+      e.preventDefault();
+      framesize = $(this).attr('data-view');
+      $('.resizer a').removeClass('active');
+      $(this).addClass('active');
+      $('.website-frame').addClass(framesize).removeClass(startingSize);
+      startingSize = framesize;
+    });
+
+
+
+  });
+</script>
+
+
+</body>
+</html>
